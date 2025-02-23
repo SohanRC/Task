@@ -37,6 +37,15 @@ class InteriorDesignerService {
             throw this.generateError(error)
         }
     }
+
+    async deleteInteriorDesigner(id) {
+        try {
+            const response = await axios.delete(`/interior/delete/${id}`, { withCredentials: true })
+            return response.data;
+        } catch (error) {
+            throw this.generateError(error)
+        }
+    }
 }
 
 const interiorDesignerService = new InteriorDesignerService()

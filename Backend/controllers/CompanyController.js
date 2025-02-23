@@ -41,4 +41,17 @@ const editCompanyById = async (req, res, next) => {
     }
 }
 
-export { getAllCompanies, getCompanyById, editCompanyById }
+const deleteCompany = async (req, res, next) => {
+    try {
+        const { id } = req.params;
+        const data = await companyModel.findByIdAndDelete(id)
+        return res.status(201).json({
+            ok: true,
+            data
+        })
+    } catch (error) {
+        return next(errorHandler(500, "Cannot Delete Company"))
+    }
+}
+
+export { getAllCompanies, getCompanyById, editCompanyById, deleteCompany }

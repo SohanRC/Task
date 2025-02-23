@@ -41,4 +41,17 @@ const editInteriorDesignerById = async (req, res, next) => {
     }
 }
 
-export { getAllInteriorDesigners, getInteriorDesignerById, editInteriorDesignerById }
+const deleteInteriorDesigner = async (req, res, next) => {
+    try {
+        const { id } = req.params;
+        const data = await interiorDesignerModel.findByIdAndDelete(id)
+        return res.status(201).json({
+            ok: true,
+            data
+        })
+    } catch (error) {
+        return next(errorHandler(500, "Cannot Delete Interior Designer"))
+    }
+}
+
+export { getAllInteriorDesigners, getInteriorDesignerById, editInteriorDesignerById, deleteInteriorDesigner }

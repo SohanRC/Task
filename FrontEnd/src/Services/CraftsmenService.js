@@ -37,6 +37,15 @@ class CraftsmenService {
             throw this.generateError(error)
         }
     }
+
+    async deleteCraftsMen(id) {
+        try {
+            const response = await axios.delete(`/craftsmen/delete/${id}`, { withCredentials: true })
+            return response.data;
+        } catch (error) {
+            throw this.generateError(error)
+        }
+    }
 }
 
 const craftsmenService = new CraftsmenService()

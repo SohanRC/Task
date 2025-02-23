@@ -38,6 +38,15 @@ class CompanyService {
             throw this.generateError(error)
         }
     }
+
+    async deleteCompany(id) {
+        try {
+            const response = await axios.delete(`/company/delete/${id}`, { withCredentials: true })
+            return response.data;
+        } catch (error) {
+            throw this.generateError(error)
+        }
+    }
 }
 
 const companyService = new CompanyService()

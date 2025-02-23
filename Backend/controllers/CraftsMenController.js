@@ -5,7 +5,6 @@ const getAllCraftsMen = async (req, res, next) => {
     try {
         console.log("Request Recived")
         const data = await craftsmenModel.find({});
-        console.log(data)
         return res.status(201).json({
             ok: true,
             data
@@ -44,4 +43,17 @@ const editCraftsMenById = async (req, res, next) => {
     }
 }
 
-export { getAllCraftsMen, getCraftsMenById, editCraftsMenById }
+const deleteCraftsMen = async (req, res, next) => {
+    try {
+        const { id } = req.params;
+        const data = await craftsmenModel.findByIdAndDelete(id)
+        return res.status(201).json({
+            ok: true,
+            data
+        })
+    } catch (error) {
+        return next(errorHandler(500, "Cannot Delete CraftsMen"))
+    }
+}
+
+export { getAllCraftsMen, getCraftsMenById, editCraftsMenById, deleteCraftsMen }

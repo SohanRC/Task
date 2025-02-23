@@ -43,6 +43,20 @@ const EditCraftsmen = () => {
     }
   }
 
+  const handleDelete = async (e) => {
+    try {
+      if (!id) return;
+      setLoading(true);
+      const { data } = await craftsmenService.deleteCraftsMen(id)
+      navigate('/')
+    } catch (error) {
+      const { status, message } = error;
+      console.log("Error ", message)
+    } finally {
+      setLoading(false)
+    }
+  }
+
   useEffect(() => {
     getCraftsMen();
   }, [id])
@@ -84,6 +98,7 @@ const EditCraftsmen = () => {
         </select>
 
         <button type='submit' className='text-xl mt-2 bg-slate-700 text-white px-2 py-1 rounded-md hover:bg-slate-600 transition-all'>Edit Details</button>
+        <button type='button' onClick={handleDelete} className='text-xl mt-2 bg-slate-700 text-white px-2 py-1 rounded-md hover:bg-slate-600 transition-all'>Delete</button>
       </form>
     </div>
 
