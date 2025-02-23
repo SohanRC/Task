@@ -23,22 +23,22 @@ const insertCraftsmenData = async () => {
         const data = [
             {
                 name: "Sohan Roy",
-                dob: "12/04/1992",
+                dob: "1992/04/12",
                 show: true
             },
             {
                 name: "Rohan Jumar",
-                dob: "15/03/1980",
+                dob: "1980/03/15",
                 show: true
             },
             {
                 name: "Rohini Mondal",
-                dob: "10/01/2001",
+                dob: "2001/01/10",
                 show: true
             },
             {
                 name: "Rishi Mukherjee",
-                dob: "21/01/2004",
+                dob: "2004/01/21",
                 show: true
             },
         ]

@@ -10,7 +10,7 @@ const InteriorDesign = () => {
     const fetchInteriorDesigners = async () => {
         setLoading(true)
         try {
-            const { data } = await interiorDesignerService.getAllCraftsMen();
+            const { data } = await interiorDesignerService.getAllInteriorDesigner();
             setInteriorDesigners(data)
         } catch (error) {
             const { status, message } = error;

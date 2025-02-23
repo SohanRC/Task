@@ -27,19 +27,19 @@ const insertCompanyData = async () => {
         const data = [
             {
                 name: "Jio Cinema",
-                startDate: "12/04/1992",
+                startDate: "1992/04/12",
                 owner: "Mr. Rohan Kumar",
                 show: true
             },
             {
                 name: "TCS",
-                startDate: "15/03/1980",
+                startDate: "1980/03/15",
                 owner: "Mr. Sohan Roychowdhury",
                 show: true
             },
             {
                 name: "Accenture",
-                startDate: "10/01/2001",
+                startDate: "2001/01/10",
                 owner: "Mr. Rakesh Roshan",
                 show: true
             },

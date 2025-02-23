@@ -20,6 +20,24 @@ class CompanyService {
             throw this.generateError(error)
         }
     }
+
+    async getCompanyById(id) {
+        try {
+            const response = await axios.get(`/company/getCompany/${id}`, { withCredentials: true })
+            return response.data;
+        } catch (error) {
+            throw this.generateError(error)
+        }
+    }
+
+    async editCompanyById(id, company) {
+        try {
+            const response = await axios.patch(`/company/editCompany/${id}`, { company }, { withCredentials: true })
+            return response.data;
+        } catch (error) {
+            throw this.generateError(error)
+        }
+    }
 }
 
 const companyService = new CompanyService()

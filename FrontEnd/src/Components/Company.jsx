@@ -37,6 +37,7 @@ const Company = () => {
             <div className='border-2 border-teal-500 h-screen w-[80vw] flex items-center justify-center flex-wrap gap-5'>
                 {
                     companies.map((comp) => {
+                        console.log(comp)
                         if(comp.show) 
                             return <CompanyCard key={comp._id} company={comp} />
                         return <></>

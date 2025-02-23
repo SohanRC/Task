@@ -19,6 +19,24 @@ class CraftsmenService {
             throw this.generateError(error)
         }
     }
+
+    async getCraftsMenById(id) {
+        try {
+            const response = await axios.get(`/craftsmen/getCraftsMen/${id}`, { withCredentials: true })
+            return response.data;
+        } catch (error) {
+            throw this.generateError(error)
+        }
+    }
+
+    async editCraftsMenById(id, craftsmen) {
+        try {
+            const response = await axios.patch(`/craftsmen/editCraftsMen/${id}`, { craftsmen }, { withCredentials: true })
+            return response.data;
+        } catch (error) {
+            throw this.generateError(error)
+        }
+    }
 }
 
 const craftsmenService = new CraftsmenService()
