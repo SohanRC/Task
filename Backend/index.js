@@ -3,6 +3,9 @@ import { config } from "dotenv"
 config();
 import cors from "cors"
 import DbConnect from "./config/DbConnect.js";
+import { insertCompanyData } from "./models/CompanyModel.js";
+import { insertCraftsmenData } from "./models/CraftsmenModel.js";
+import { insertINteriorData } from "./models/InteriorDesignerModel.js";
 
 const app = express();
 const PORT = process.env.PORT || 3000
@@ -23,6 +26,9 @@ app.listen(PORT, (err) => {
 
     DbConnect().then(() => {
         console.log("Database Connection Success !");
+        // insertCompanyData();
+        // insertCraftsmenData();
+        // insertINteriorData();
     }).catch(err => {
         console.log(err)
         console.log("Could not connect to Databse!");
